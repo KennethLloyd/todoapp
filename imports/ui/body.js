@@ -4,8 +4,8 @@ import './body.html';
 
 Template.body.helpers({
   tasks() {
-    return Tasks.find({});
-;
+    // Show newest tasks at the top
+    return Tasks.find({}, { sort: { createdAt: -1 } });
   },
 });
 
